@@ -7,6 +7,10 @@ Conjunto de arquivos para referência rápida
 - [Git](references/git.md)
 - [Git Flow](references/git-flow.md)
 
+## S
+
+- [SCSS](references/scss.md)
+
 ## V
 
 - [VueJS](references/vuejs.md)
