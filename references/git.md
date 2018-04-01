@@ -21,7 +21,8 @@
 
 ``` bash
 # Checa onde foi instalada a versão do Git
-where git
+whereis git    # Linux
+where git      # Windows
 
 # Verifica versão do Git
 git --version
@@ -29,8 +30,7 @@ git --version
 # Define configurações de usuário
 git config --global user.name "UserName"
 git config --global user.email "username@email.com"
-# Se a configuração for apenas local (um projeto em particular) o atributo
-# --global pode ser omitido
+# Se a configuração for apenas local o atributo --global pode ser omitido
 
 # Define configuração de exibição de cores em linha de comando
 git config --global color.ui true
@@ -59,7 +59,7 @@ git help [comando]
 # Clona um projeto dentro de um diretório com o mesmo nome do projeto remoto
 git clone http://path/to/project.git
 
-# Clona um projeto dentro de um diretório chamado meu-projeto
+# Clona um projeto dentro de um diretório chamado my-project
 git clone http://path/to/project.git my-project
 ```
 
