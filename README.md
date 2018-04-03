@@ -10,6 +10,7 @@ Conjunto de arquivos para referência rápida
 
 - [Git](references/git.md)
 - [Git Flow](references/git-flow.md)
+- [Gulp](references/gulp.md)
 
 ## S
 
