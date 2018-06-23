@@ -23,6 +23,7 @@ Conjunto de arquivos para referência rápida
 ## S
 
 - [SCSS](references/scss.md)
+- [SSH (chaves)](references/ssh-keys.md)
 
 ## V
 
