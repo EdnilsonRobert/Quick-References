@@ -42,16 +42,16 @@ console.log(iterNumbers.next()); // Retorna { value: undefined, done: true }
 `for...of` percorre o laço se, e somente se, ele for iterável.
 
 ```javascript
-for(var number of numbers) {
+for (var number of numbers) {
   console.log(number); // Retorna os 5 elementos do vetor
 }
 
-for(var number of numbers) {
+for (var number of numbers) {
   if(number > 3) break;
   console.log(number); // Retorna apenas os 3 primeiros elementos do vetor
 }
 
-for(var number of numbers) {
+for (var number of numbers) {
   if(number === 3) continue;
   console.log(number); // Retorna todos elementos do vetor exceto o número 3
 }
@@ -60,18 +60,18 @@ for(var number of numbers) {
 ### `for...in`
 
 ```javascript
-for(var info of car) {
+for (var info of car) {
   console.log(info); // TypeError: car is not iterable
 }
 
-for(var info in car) {
+for (var info in car) {
   console.log(info);
   // Retorna as chaves das propriedades do objeto (name, year)
   console.log(typeof info);
   // Retorna os tipos (string, string)
 }
 
-for(var info in car) {
+for (var info in car) {
   var data = car[info];
   console.log(data);
   // Retorna os valores das propriedades do objeto (Porsche, 1974)
