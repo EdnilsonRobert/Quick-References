@@ -12,7 +12,8 @@ Conjunto de arquivos para referência rápida
 
 ## J
   - JavaScript
-    - [JavaScript](references/js-array-methods.md)
+    - [Métodos de array](references/js-array-methods.md)
+    - [Iterators](references/js-iterators.md)
 
 ## N
   - [NPM](references/npm.md)
