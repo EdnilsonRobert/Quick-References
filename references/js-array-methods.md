@@ -21,7 +21,7 @@ var matrix = [
   [10, 20, 30, 40, 50],
   [30, 40, 50, 60, 70],
   [50, 60, 70, 80, 90]
-]
+];
 var people = [
   {name: 'Name1', age: 12},
   {name: 'Name2', age: 14},
@@ -35,7 +35,7 @@ var fruits = [
   {name: 'Guava', price: 5},
   {name: 'Lemon', price: 3},
   {name: 'Melon', price: 9}
-]
+];
 ```
 
 ### Métodos para array
@@ -255,6 +255,7 @@ console.log(list1);
 // Retorna [10, 20, 30, 40, 50, 30, 40, 50, 60, 70, 50, 60, 70, 80, 90]
 
 // EXEMPLO: REMOVER ITENS DUPLICADOS
+
 var list2 = list1.sort().reduce(function(init, current) {
   if (init.length === 0 || init[init.length - 1] !== current) {
     init.push(current);
