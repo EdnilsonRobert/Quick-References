@@ -12,11 +12,12 @@ Conjunto de arquivos para referência rápida
 
 ## J
   - JavaScript
+    - [Variáveis e escopo de variáveis](references/js-variables.md)
     - [Métodos de array](references/js-array-methods.md)
     - [Iterators](references/js-iterators.md)
     - [Estruturas de dados](references/js-data-structures.md)
-    - [Variáveis e escopo de variáveis](references/js-variables.md)
     - [Template strings](references/js-template-strings.md)
+    - [Arrow functions](references/js-arrow-functions.md)
 
 ## N
   - [NPM](references/npm.md)
