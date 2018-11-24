@@ -18,6 +18,7 @@ Conjunto de arquivos para referência rápida
     - [Estruturas de dados](references/js-data-structures.md)
     - [Template strings](references/js-template-strings.md)
     - [Arrow functions](references/js-arrow-functions.md)
+    - [Objetos](references/js-objects.md)
 
 ## N
   - [NPM](references/npm.md)
