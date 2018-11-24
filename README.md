@@ -19,6 +19,7 @@ Conjunto de arquivos para referência rápida
     - [Template strings](references/js-template-strings.md)
     - [Arrow functions](references/js-arrow-functions.md)
     - [Objetos](references/js-objects.md)
+    - [Valores padrão](references/js-default-parameters.md)
 
 ## N
   - [NPM](references/npm.md)
