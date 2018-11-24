@@ -16,6 +16,7 @@ Conjunto de arquivos para referência rápida
     - [Iterators](references/js-iterators.md)
     - [Estruturas de dados](references/js-data-structures.md)
     - [Variáveis e escopo de variáveis](references/js-variables.md)
+    - [Template strings](references/js-template-strings.md)
 
 ## N
   - [NPM](references/npm.md)
