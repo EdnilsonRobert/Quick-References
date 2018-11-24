@@ -152,7 +152,7 @@ var music5 = { title: 'No amor não existe rollback', author: 'SQL' };
 // Criando um Set
 var playlist = new Set();
 
-// Adicionando música
+// Adicionando músicas
 playlist.add(music1);
 playlist.add(music2);
 playlist.add(music3);
@@ -164,7 +164,7 @@ playlist.delete(music3);
 playlist.clear();
 
 // Adicionando uma música que já está na playlist
-playlist.add(music1);
+playlist.add(music1); // music1 não será adicionada à playlist
 
 // Retornando tamanho da playlist
 console.log(playlist.size);
@@ -172,15 +172,12 @@ console.log(playlist.size);
 // É possível inicializar o Set com elementos
 var playlist = new Set([music1, music2, music3, music4]);
 
-// Checando músicas na playlist
+// Iteração em um Set
 for (var music of playlist) {
-  console.log(music);
+  console.log(music); // Retorna um objeto contendo música e autor
 }
 ```
 
 ### `WeakSet`
 
-`WeakSet` é...
-
-```javascript
-```
+O `WeakSet` é um Set que não previne os seus elementos de serem coletados pelo Garbage Collector. No `WeakSet` só é possível adicionar objetos. O `WeakSet` não é iterável.
