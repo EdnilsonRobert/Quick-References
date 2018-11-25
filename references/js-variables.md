@@ -4,10 +4,6 @@
 
 ### Exemplo de escopo de variáveis
 
-No Exemplo 1 há uma variável definida dentro do mesmo contexto e mesmo escopo. Desta forma a segunda declaração sobrescreve a primeira.
-
-No Exemplo 2 há duas variáveis de mesmo nome definidas dentro do mesmo contexto, todavia em escopos diferentes. Desta forma a segunda declaração não sobrescreve a primeira.
-
 ```javascript
 // Exemplo 1
 var message = 'String 1';
@@ -24,6 +20,10 @@ function message() {
 console.log(message); // Retorna String 1
 ```
 
+No Exemplo 1 há uma variável definida dentro do mesmo contexto e mesmo escopo. Desta forma a segunda declaração sobrescreve a primeira.
+
+No Exemplo 2 há duas variáveis de mesmo nome definidas dentro do mesmo contexto, todavia em escopos diferentes. Desta forma a segunda declaração não sobrescreve a primeira.
+
 ### Exemplo de escopo de função e escopo de bloco
 
 ```javascript
@@ -38,9 +38,10 @@ varArr.forEach(function(func) {
   func();
 });
 // Retorna 5 5 5 5
-// Variáveis declaradas com var tem escopo de função.
-// Cada nova atribuição de valor dentro do loop é apenas uma nova atribuição a uma mesma referência.
 ```
+
+  - Variáveis declaradas com `var` tem escopo de função.
+  - Cada nova atribuição de valor dentro do _loop_ é apenas uma nova atribuição a uma mesma referência.
 
 ```javascript
 // Exemplo 2
@@ -54,17 +55,19 @@ letArr.forEach(function(func) {
   func();
 });
 // Retorna 1 2 3 4
-// Variáveis declaradas com let tem escopo de bloco.
-// A cada iteração uma nova variável é criada.
 ```
+
+  - Variáveis declaradas com `let` tem escopo de bloco.
+  - A cada iteração uma nova variável é criada.
 
 ### `const`
 
-Deve ser utilizado para variáveis que não devem mudar seu valor dentro de um escopo com o decorrer do tempo durante a execução de um programa.
+A declaração `const` deve ser utilizado para variáveis que não devem mudar seu valor dentro de um escopo com o decorrer do tempo durante a execução de um programa.
 
 ```javascript
 const birthDate = '01-01-2000';
-birthDate = '31-12-1999'; // Retorna SyntaxError: Assignment to constant variable
+birthDate = '31-12-1999';
+// Retorna SyntaxError: Assignment to constant variable
 ```
 
 ### `let`
@@ -81,14 +84,15 @@ let letNumber = 0;
 let letNumber = 1;
 console.log(letNumber);
 // Retorna SyntaxError: Identifier 'letNumber' has already been declared
-// Não é possível declarar duas variáveis com o mesmo nome dentro do mesmo escopo.
 ```
+
+  - Não é possível declarar duas variáveis com o mesmo nome dentro do mesmo escopo.
 
 ### Hoisting e TDZ (Temporal Dead Zone)
 
 #### Hoisting e variáveis
 
-Em Javascript, variáveis e funções tem comportamento de _hoisting_. Hoisting é o içamento das variáveis para o topo do bloco de código.
+Em Javascript, variáveis e funções tem comportamento de _hoisting_. _Hoisting_ é o içamento das variáveis para o topo do bloco de código. Durante a execução, as declarações de variáveis e funções são movidas para o topo.
 
 ```javascript
 // Considerando o snippet abaixo...
@@ -99,8 +103,6 @@ function printName(name) {
   console.log('Name:', name);
 }
 var nome;
-
-// Durante a execução, as declarações de variável e função são movidas para o topo.
 ```
 
 #### TDZ e `let`
@@ -114,23 +116,24 @@ if (true) {
   console.log(value); // Retorna 0
 }
 console.log(value); // Retorna 0
-
-// Ambas funções de console utilizam a mesma variável global.
-// Não há conflito de variáveis.
 ```
+
+  - Ambas funções de console utilizam a mesma variável global.
+  - Não há conflito de variáveis.
 
 ```javascript
 // Exemplo 2
 let value = 0;
 if (true) {
-  console.log(value); // Retorna ReferenceError: value is not defined
+  console.log(value);
+  // Retorna ReferenceError: value is not defined
   let value;
 }
 console.log(value); // Retorna 0
-
-// Não há hoisting. Esse é o comportamento do TDZ.
-// No escopo de bloco (dentro da função) a variável foi chamada antes de sua declaração.
 ```
+
+  - Não há _hoisting_. Esse é o comportamento do TDZ.
+  - No escopo de bloco (dentro da função) a variável foi chamada antes de sua declaração.
 
 ```javascript
 // Exemplo 3
@@ -140,9 +143,9 @@ if (true) {
   console.log(value); // Retorna undefined
 }
 console.log(value); // Retorna 0
-
-// A variável é indefinida pois foi declarada, porém sem atribuição de valor.
 ```
+
+  - A variável é `undefined` pois foi declarada sem atribuição de valor.
 
 ```javascript
 // Exemplo 4

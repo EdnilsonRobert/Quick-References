@@ -27,7 +27,7 @@ var doAwesomeThing = new Function();
 
 ### Arrow Functions
 
-São menos verbosas e tratam de forma diferente o contexto de execução.
+Arrow Functions são menos verbosas e tratam de forma diferente o contexto de execução.
 
 ```javascript
 (param1, param2, ..., paramN) => {
@@ -41,39 +41,49 @@ São menos verbosas e tratam de forma diferente o contexto de execução.
 
 #### Exemplos
 
+A declaração de função mais comum é mostrada abaixo.
+
 ```javascript
 var welcome = function(name) {
   return 'Olá, ' + name + '!';
 }
 console.log(welcome('Mundo')); // Retorna Olá, Mundo!
+```
 
-// Exemplo 1
+E se remover a palavra reservada `function`?
+
+```javascript
 let welcome = (name) => {
   return `Olá, ${name}!`;
 }
 console.log(welcome('Mundo')); // Retorna Olá, Mundo!
+```
 
-// Exemplo 2
+Apenas um parâmetro? E se remover os parênteses?
+
+```javascript
 let welcome = name => {
   return `Olá, ${name}!`;
 }
 console.log(welcome('Mundo')); // Retorna Olá, Mundo!
-// É possível remover os parênteses dos parâmetros pois há apenas um
+```
 
-// Exemplo 3
+Nada além de um `return` no corpo da função? E se remover as chaves e a palavra reservada `return`?
+
+```javascript
 let welcome = name => `Olá, ${name}!`;
 console.log(welcome('Mundo')); // Retorna Olá, Mundo!
-// É possível remover as chaves e o return pois o corpo da função tem apenas uma linha
 ```
 
 ### Contexto de execução
 
-O contexto de exeução possui uma propriedade chamada ThisBinding que pode ser acessada a qualquer momento através da palavra reservada `this`. O valor do `this` (contexto da função) é constante e existe somente enquanto a função existir (enquanto o contexto existir).
+O contexto de execução possui uma propriedade chamada ThisBinding que pode ser acessada a qualquer momento através da palavra reservada `this`. O valor do `this` (contexto da função) é constante e existe somente enquanto a função existir (enquanto o contexto existir).
 
 ```javascript
 // Exemplo 1
 console.log(this);
 // Retorna Window pois o this faz referência ao objeto global Window
+
 
 // Exemplo 2
 function context2() {
@@ -81,6 +91,7 @@ function context2() {
 }
 context2();
 // Retorna Window pois o this faz referência ao objeto global Window
+
 
 // Exemplo 3
 let obj = {

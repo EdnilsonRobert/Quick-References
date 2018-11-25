@@ -46,7 +46,7 @@ console.log(band.name); // Retorna Dead Kennedys
 console.log(otherBand.name); // Retorna Dead Kennedys
 ```
 
-A variável `otherBand` não é um novo objeto, mas uma referência à primeira variável, o objeto `band`. Ambas apontam para o mesmo endereço de memória e dessa forma, modificar o valor de uma variável também modifica o valor da outra.
+A variável `otherBand` não é um novo objeto, mas uma referência à primeira variável, o objeto `band` e ambas apontam para o mesmo endereço de memória. Sendo assim, modificar o valor de uma variável também modifica o valor da outra.
 
 #### Atribuindo propriedades
 
@@ -64,14 +64,14 @@ band['showBand'] = function() {
 
 // Exibindo o objeto
 band.showBand(); // Retorna Ramones (NYC, USA)
-console.log(band); // Retorna o objeto e suas 4 propriedades
+console.log(band); // Retorna o objeto e suas propriedades
 ```
 
 ### Melhorias em objetos literais
 
-No exemplo abaixo o objeto recebe uma variável como valor de cada propriedade. Se o nome da propriedade coincide com o nome da variável não é necessário definir o par chave/valor, basta definir apenas o valor. O interpretador associa o nome da propriedade com o nome da variável e faz o `bind` automático.
+#### Exemplo 1: Propriedades com chave e valor
 
-#### Exemplo 1: Atributos com chave e valor
+O exemplo abaixo demonstra um objeto recebe uma variável como valor de cada propriedade.
 ```javascript
 var name = 'Ramones';
 var origin = 'NYC, USA';
@@ -84,7 +84,10 @@ console.log(band.name + ' (' + band.origin + ')');
 // Retorna Ramones (NYC, USA)
 ```
 
-#### Exemplo 2: Atributos sem chave, apenas valor
+#### Exemplo 2: Propriedades sem chave, apenas valor
+
+O exemplo abaixo demonstra que se o nome da propriedade coincide com o nome da variável não é necessário definir o par chave/valor, basta definir apenas o valor. O interpretador associa o nome da propriedade com o nome da variável e faz o `bind` automático.
+
 ```javascript
 let name = 'Ramones';
 let origin = 'NYC, USA';
@@ -102,6 +105,9 @@ band.sloogan();
 ```
 
 #### Exemplo 3: Definindo a função diretamente no objeto literal
+
+O exemplo abaixo demonstra que é possível atribuir uma função diretamente no objeto literal. Essa função será tratada como um método do objeto.
+
 ```javascript
 let name = 'Ramones';
 let origin = 'NYC, USA';

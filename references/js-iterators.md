@@ -4,11 +4,12 @@
 
 Um objeto é um iterador quando sabe como acessar itens numa coleção, um por vez, enquanto mantém rastreada a posição atual em uma dada sequência. Iteradores fornecem uma maneira de acessar sequencialmente os elementos de uma coleção sem expor sua representação interna.
 
-Objetos iteráveis são uma generalização dos arrays. É um conceito que permite tornar qualquer objeto utilizável em um laço `for...of`, por exemplo. Arrays são iteráveis por si só, mas não apenas arrays. Strings e alguns outros objetos _built-in_ (como Array, Map ou Set) também são iteráveis pois seus protótipos já contém o método `Symbol.iterator`.
+Objetos iteráveis são uma generalização dos arrays. É um conceito que permite tornar qualquer objeto utilizável em um laço `for...of`, por exemplo. Arrays são iteráveis por si só, mas não apenas arrays. Strings e alguns outros objetos _built-in_ (como Array, Map ou Set) também são iteráveis pois seus protótipos contém o método `Symbol.iterator`.
 
 ## Data
 
 ```javascript
+// Dados utilizados nos exemplos
 var numbers = [1, 2, 3, 4, 5];
 var fruits = [
   {name: 'Apple', price: 4},

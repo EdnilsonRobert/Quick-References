@@ -4,7 +4,7 @@
 
 ### `Map`
 
-`Map` é uma estrutura de dados constituída por pares chave/valor. As chaves são os nomes dos atributos e podem ser funções, objetos, expressões ou tipos como strings e números.
+`Map` é uma estrutura de dados constituída por pares chave/valor. As chaves são os nomes das propriedades e podem ser funções, objetos, expressões ou tipos como strings e números.
 
 ```javascript
 // Criando um Map
@@ -15,50 +15,50 @@ function myFunction() {};
 var myObject = {};
 
 // Adicionando entradas ao Map
-map.set('String', 'Primeiro atributo');
-map.set(myObject, 'Segundo atributo');
-map.set(myFunction, 'Terceiro atributo');
+map.set('String', 'Primeira propriedade');
+map.set(myObject, 'Segunda propriedade');
+map.set(myFunction, 'Terceira propriedade');
 
-// Retornando valores de atributos
-console.log(map.get('String')); // Retorna o valor do primeiro atributo
+// Retornando valores de propriedades
+console.log(map.get('String')); // Retorna o valor da primeira propriedade
 
-// Retornando o tipo das chaves dos atributos
+// Retornando o tipo das chaves das propriedades
 console.log(typeof 'String'); // Retorna tipo string
 
-// Retornando o tipo dos valores dos atributos
+// Retornando o tipo dos valores das propriedades
 console.log(typeof map.get('String')); // Retorna tipo string
 
 // Retornando o tamanho do Map
 console.log(`Tamanho do mapa: ${map.size}`);
 
-// Verificando a existência de um atributo
+// Verificando a existência de uma propriedade
 console.log(map.has(myObject)); // Retorna true
 console.log(map.has('otherObject')); // Retorna false
 
-// Removendo um atributo do Map
+// Removendo uma propriedade do Map
 map.delete('String');
 
-// Removendo todos os atributos de um Map
+// Removendo todas as propriedades de um Map
 map.clear();
 
 // Iterações em um Map
 for (var key of map.keys()) {
   console.log(`${key} | Tipo: ${typeof key}`);
-  // Retorna o nome do atributo e seu tipo
+  // Retorna o nome da propriedade e seu tipo
 }
 for (var value of map.values()) {
   console.log(`${value} | Tipo: ${typeof value}`);
-  // Retorna o valor do atributo e seu tipo
+  // Retorna o valor da propriedade e seu tipo
 }
 for (var entry of map.entries()) {
   console.log(`${entry} | Tipo: ${typeof entry}`);
-  // Retorna atributo (chave/valor) e o tipo object
+  // Retorna propriedade (chave/valor) e o tipo object
 }
 ```
 
 ### `WeakMap`
 
-`WeakMap` é uma coleção de pares chave/valor como o Map, porém suas chaves só podem ser objetos e suas referências dos objetos nas chaves são fracamente mantidas. Isso significa que não há prevenção para que os objetos não sejam removidos pelo Garbage Collector caso não exista alguma referência para o objeto em memória.
+`WeakMap` é uma coleção de pares chave/valor como o Map, porém suas chaves só podem ser objetos e as referências dos objetos nas chaves são fracamente mantidas. Isso significa que não há prevenção para que os objetos não sejam removidos pelo _Garbage Collector_ caso não exista alguma referência para o objeto em memória.
 
 ```javascript
 // Criando um WeakMap
@@ -75,23 +75,23 @@ weakMap.set(elem1, 'String 1');
 weakMap.set(elem2, 'String 2');
 weakMap.set(elem3, 'String 3');
 
-// Retornando valores de atributos
-console.log(weakMap.get(elem1)); // Retorna o valor do primeiro atributo
+// Retornando valores de propriedades
+console.log(weakMap.get(elem1)); // Retorna o valor do primeira propriedade
 
-// Retornando o tipo das chaves dos atributos
+// Retornando o tipo das chaves das propriedades
 console.log(typeof elem1); // Retorna tipo object
 
-// Retornando o tipo dos valores dos atributos
+// Retornando o tipo dos valores das propriedades
 console.log(typeof weakMap.get(elem1)); // Retorna tipo string
 
-// Verificando a existência de um atributo
+// Verificando a existência de uma propriedade
 console.log(weakMap.has(elem1)); // Retorna true
 console.log(weakMap.has(elem4)); // Retorna false
 
-// Removendo um atributo do WeakMap
+// Removendo uma propriedade do WeakMap
 weakMap.delete(elem3);
 
-// Testando perda de referência de atributo
+// Testando perda de referência de propriedade
 elem2 = null;
 setTimeout(function() {
   console.log(weakMap.get(elem2)); // Retorna undefined após 3s
@@ -100,10 +100,10 @@ setTimeout(function() {
 
 Vantagens:
 
-  - mantém o programa protegido de Memory Leak;
+  - mantém o programa protegido de _Memory Leak_;
   - mantém os dados privados dentro da aplicação.
 
-Exemplo: Proteger dados privados
+#### Exemplo: Proteger dados privados
 
 ```javascript
 // Abordagem tradicional
@@ -157,16 +157,16 @@ playlist.add(music1);
 playlist.add(music2);
 playlist.add(music3);
 
-// Removendo música
+// Removendo elementos
 playlist.delete(music3);
 
-// Removendo todas as músicas
+// Removendo todos os elementos
 playlist.clear();
 
-// Adicionando uma música que já está na playlist
+// Adicionando um elemento que já está no Set
 playlist.add(music1); // music1 não será adicionada à playlist
 
-// Retornando tamanho da playlist
+// Retornando tamanho do Set
 console.log(playlist.size);
 
 // É possível inicializar o Set com elementos
@@ -180,4 +180,4 @@ for (var music of playlist) {
 
 ### `WeakSet`
 
-O `WeakSet` é um Set que não previne os seus elementos de serem coletados pelo Garbage Collector. No `WeakSet` só é possível adicionar objetos. O `WeakSet` não é iterável.
+O `WeakSet` é um Set que não previne os seus elementos de serem coletados pelo _Garbage Collector_. No `WeakSet` só é possível adicionar objetos. O `WeakSet` não é iterável.

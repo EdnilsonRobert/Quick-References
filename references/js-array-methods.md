@@ -15,6 +15,7 @@
 ### Data
 
 ```javascript
+// Dados utilizados nos exemplos
 var names = ['Name1', 'Name2', 'Name3', 'Name4', 'Name5'];
 var numbers = [1, 2, 3, 4, 5];
 var matrix = [
@@ -45,9 +46,9 @@ var fruits = [
 O método `forEach()` executa uma dada função em cada elemento de um array.
 
 ```javascript
-// EXEMPLO: LISTAR ELEMENTOS DE UM VETOR
+// Exemplo: Listar elementos de um vetor
 
-for(var i = 0, length = names.length; i < length; i++) {
+for (var i = 0, length = names.length; i < length; i++) {
   console.log(names[i]); // Exibe os 5 elementos do vetor.
 }
 
@@ -57,23 +58,24 @@ names.forEach(function(name) {
 
 names.forEach(function(name) {
   names.push('Name6');
-  // Exibe os 5 elementos do vetor e Name6 não será incluído.
-  // Motivo: o range de elementos processados é invocado antes da chamada do callback.
   console.log(name);
+  // Exibe os 5 elementos do vetor e Name6 não será incluído.
 });
+// Motivo:
+// os elementos que serão processados são invocados antes da chamada do callback.
 
 people.forEach(function(person) {
-  // Exibe as propriedades name e age de cada objeto do vetor.
   console.log(`Nome: ${person.name} e idade: ${person.age}.`);
+  // Exibe as propriedades name e age de cada objeto do vetor.
 });
 ```
 
 #### `map`
 
-O método `map()` invoca a função callback passada por argumento para cada elemento do array e devolve um novo array como resultado.
+O método `map()` invoca a função _callback_ passada por argumento para cada elemento do array e devolve um novo array como resultado.
 
 ```javascript
-// EXEMPLO: MULTIPLICAR DADOS DE UM VETOR
+// Exemplo: Multiplicar dados de um vetor
 
 var double1 = [];
 numbers.forEach(function(number) {
@@ -96,7 +98,7 @@ console.log(typeof double2); // Retorna tipo object
 O método `filter()` cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida.
 
 ```javascript
-// EXEMPLO: ENCONTRAR PESSOAS COM 16 ANOS OU MAIS
+// Exemplo: Encontrar pessoas com 16 anos ou mais
 
 var age16a = [];
 for (var i = 0, length = people.length; i < length; i++) {
@@ -109,20 +111,18 @@ console.log(typeof age16a); // Retorna tipo object
 var age16b = people.filter(function(person) {
   return person.age >= 16;
 });
-// Retorna vetor de objetos
-console.log(age16b);
-// Retorna tipo object
-console.log(typeof age16b);
-// Retorna primeira posição do vetor de objetos
+console.log(age16b); // Retorna vetor de objetos
+console.log(typeof age16b); // Retorna tipo object
 console.log(`Nome: ${age16b[0].name} e idade: ${age16b[0].age}.`);
+// Retorna primeira posição do vetor de objetos
 ```
 
 #### `find`
 
-O método `find()` retorna o valor do primeiro elemento do array que satisfizer a função de teste provida. Caso contrário, `undefined` é retornado.
+O método `find()` retorna o valor do primeiro elemento do array que satisfizer a função de teste fornecida. Caso contrário, `undefined` é retornado.
 
 ```javascript
-// EXEMPLO: ENCONTRAR UMA PESSOA COM 16 ANOS
+// Exemplo: Encontrar uma pessoa com 16 anos
 
 var age16a;
 for (var i = 0, length = people.length; i < length; i++) {
@@ -147,7 +147,7 @@ console.log(typeof age16b); // Retorna tipo object
 O método `every()` testa se todos os elementos do array passam pelo teste implementado pela função fornecida.
 
 ```javascript
-// EXEMPLO: VERIFICAR SE TODAS AS PESSOAS TEM A MESMA IDADE: 16 ANOS
+// Exemplo: Verificar se todas as pessoas tem a mesma idade (16 anos)
 
 var age16a = true;
 for (var i = 0, length = people.length; i < length; i++) {
@@ -169,10 +169,10 @@ console.log(typeof age16b); // Retorna tipo boolean
 
 #### `some`
 
-O método `some()` testa se alguns dos elementos no array passam no teste implementado pela função atribuída.
+O método `some()` testa se algum dos elementos no array passa no teste implementado pela função fornecida.
 
 ```javascript
-// EXEMPLO: VERIFICA SE ALGUMA PESSOA TEM 16 ANOS DE IDADE
+// Exemplo: Verifica se alguma pessoa tem a idade procurada (16 anos)
 
 var age16a = false;
 for (var i = 0, length = people.length; i < length; i++) {
@@ -194,10 +194,10 @@ console.log(typeof age16b); // Retorna tipo boolean
 
 #### `reduce`
 
-O método `reduce()` utiliza uma função sobre um acumulador (seria quase um sinônimo para array com elementos numéricos) e cada elemento do array (da esquerda para direita), reduzindo-a a um único valor.
+O método `reduce()` utiliza uma função sobre um acumulador e cada elemento do array (da esquerda para direita), reduzindo-a a um único valor.
 
 ```javascript
-// EXEMPLO: SOMAR VALORES DE UM VETOR
+// Exemplo: Somar valores de um vetor
 
 var sum1 = 0;
 for (var i = 0, length = numbers.length; i < length; i++) {
@@ -208,45 +208,40 @@ console.log(typeof sum1); // Retorna tipo number
 
 var sum2 = numbers.reduce(function(sum, number) {
   return sum + number;
-  // sum é um acumulador para a operação aritmética
-  // number é o valor a ser adicionado ao acumulador
-  // 0 (zero) é o valor inicial do acumulador
 }, 0);
 console.log(sum2); // Retorna soma dos elementos do vetor
 console.log(typeof sum2); // Retorna tipo number
+
+// sum é um acumulador para a operação aritmética
+// number é o valor a ser adicionado ao acumulador
+// 0 (zero) é o valor inicial do acumulador
 ```
 
 ```javascript
-// EXEMPLO: SOMAR VALORES EM UM VETOR DE OBJETOS
+// Exemplo: Somar valores em um vetor de objetos
 
 var total = fruits.reduce(function(sum, fruit) {
   return sum + fruit.price
-  // sum é um acumulador para a operação aritmética
-  // fruit é o objeto com um atributo numérico a ser adicionado ao acumulador
-  // 0 (zero) é o valor inicial do acumulador
 }, 0);
-console.log(total); // Retorna soma dos atributos price de cada objeto do vetor
+console.log(total);
+// Retorna soma das propriedades price de cada objeto do vetor
 console.log(typeof total); // Retorna tipo number
 ```
 
 ```javascript
-// EXEMPLO: RETORNAR VETOR COM VALOR DE CADA FRUTA
+// Exemplo: Retornar vetor com valor de cada fruta
 
 var prices = fruits.reduce(function(list, fruit) {
   list.push(fruit.price);
   return list;
-  // list é um acumulador para a receber os preços de cada fruta
-  // fruit é o objeto com um valor numérico a ser adicionado ao acumulador
-  // [] (vetor vazio) é o valor inicial do acumulador
 }, []);
-// Retorna vetor com os atributos price de cada objeto do vetor original
 console.log(prices);
-// Retorna tipo object
-console.log(typeof prices);
+// Retorna vetor com os atributos price de cada objeto do vetor original
+console.log(typeof prices); // Retorna tipo object
 ```
 
 ```javascript
-// EXEMPLO: REDUZIR UM VETOR DE VETORES
+// Exemplo: Reduzir um vetor de vetores
 
 var list1 = matrix.reduce(function(a, b) {
   return a.concat(b);
@@ -254,7 +249,7 @@ var list1 = matrix.reduce(function(a, b) {
 console.log(list1);
 // Retorna [10, 20, 30, 40, 50, 30, 40, 50, 60, 70, 50, 60, 70, 80, 90]
 
-// EXEMPLO: REMOVER ITENS DUPLICADOS
+// Exemplo: Remover itens duplicados em um vetor
 
 var list2 = list1.sort().reduce(function(init, current) {
   if (init.length === 0 || init[init.length - 1] !== current) {

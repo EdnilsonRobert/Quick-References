@@ -11,7 +11,7 @@ Estruturas de strings são abstrações de alto nível para uma cadeia de caract
   - Buscar elementos específicos.
   - Eliminar e transformar caracteres ou palavras.
 
-Considerando o snippet abaixo.
+Considerando o _snippet_ abaixo.
 
 ```javascript
 const band = {
@@ -37,9 +37,9 @@ No Exemplo 1 acima há alguns contratempos.
   - A variável `message` além de longa é pouco legível.
   - Há quebras de linha para manter a formatação.
 
-O Exemplo 2 mostra uma forma mais limpa de escrever a string: a interpolação de strings. É importante notar que o segundo exemplo não utiliza um par de apóstrofos ou aspas para envolver a string, mas sim um par de crases. Esse modelo dispensa a concatenação de strings e variáveis.
+O Exemplo 2 mostra uma forma mais limpa de escrita para a string: a **interpolação de strings**. É importante notar que o segundo exemplo não utiliza um par de apóstrofos ou aspas para envolver a string, mas sim um par de crases. Esse modelo dispensa a concatenação de strings e variáveis.
 
-A interpolação de strings permite, além de variáveis, a utilização de expressões.
+  1. A interpolação de strings permite, além de variáveis, a utilização de expressões.
 
 ```javascript
 let n1 = 1;
@@ -47,7 +47,7 @@ let n2 = 2;
 console.log(`A soma de ${n1} e ${n2} resulta em ${n1 + n2}.`);
 ```
 
-Template strings mantém a formatação.
+  2. Template strings mantém a formatação.
 
 ```javascript
 // Sem template strings
@@ -63,7 +63,7 @@ function log(any) {
 
 ## Tagged template strings
 
-Uma forma mais avançada dos template string são os template strings com marcações ou tags, ou tagged template strings. Com eles, você tem a possibilidade de modificar a saída dos template strings usando uma função.
+Uma forma mais avançada dos template string são os template strings com marcações ou tags (etiquetas), ou **tagged template strings**. Com eles, existe a possibilidade de modificar a saída dos template strings usando uma função.
 
 ```javascript
 const band = {
