@@ -20,6 +20,7 @@ Conjunto de arquivos para referência rápida
     - [Arrow functions](references/js-arrow-functions.md)
     - [Objetos](references/js-objects.md)
     - [Valores padrão](references/js-default-parameters.md)
+    - [Parâmetros Rest e Operador Spread](references/js-rest-spread.md)
 
 ## N
   - [NPM](references/npm.md)
