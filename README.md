@@ -22,6 +22,7 @@ Conjunto de arquivos para referência rápida
     - [Valores padrão](references/js-default-parameters.md)
     - [Parâmetros Rest e Operador Spread](references/js-rest-spread.md)
     - [Desestruturamento](references/js-destructuring.md)
+    - [Classes](references/js-classes.md)
 
 ## N
   - [NPM](references/npm.md)
