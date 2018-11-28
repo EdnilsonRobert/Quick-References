@@ -25,6 +25,7 @@ Conjunto de arquivos para referência rápida
     - [Classes](references/js-classes.md)
     - [Módulos](references/js-modules.md)
     - [Funções geradoras](references/js-generator-functions.md)
+    - [Promises](references/js-promises.md)
 
 ## N
   - [NPM](references/npm.md)
