@@ -23,6 +23,7 @@ Conjunto de arquivos para referência rápida
     - [Parâmetros Rest e Operador Spread](references/js-rest-spread.md)
     - [Desestruturamento](references/js-destructuring.md)
     - [Classes](references/js-classes.md)
+    - [Módulos](references/js-modules.md)
 
 ## N
   - [NPM](references/npm.md)
