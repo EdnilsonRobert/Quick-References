@@ -37,5 +37,8 @@ Conjunto de arquivos para referência rápida
 ## V
   - [VueJS](references/vuejs.md)
 
+## W
+  - [webpack](references/webpack.md)
+
 ## Y
   - [Yarn](references/yarn.md)
